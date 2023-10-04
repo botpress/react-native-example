@@ -134,6 +134,9 @@ true; // note: this is required, or you'll sometimes get silent failures
   return (
     <View style={{ flex: 1, flexDirection: "column" }}>
       <View style={{ flex: 1 }}>
+        <View style={{height: 50, justifyContent:"center", alignItems:"center"}}>
+          {/* <Text>Your app header or spacer</Text> */}
+        </View>
         <WebView
           ref={(r) => (this.webref = r)}
           style={{ flex: 1 }}
