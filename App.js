@@ -1,6 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import { useEffect, useRef } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { Button, StyleSheet, Text, View } from "react-native";
 import { WebView } from "react-native-webview";
 
 // how to use (ideal) : 
@@ -148,6 +148,25 @@ true; // note: this is required, or you'll sometimes get silent failures
           }}
           injectedJavaScript={getOtherNotifications}
         />
+        <Button
+          onPress={() => {
+            sendEvent({ type: "toggle" });
+          }}
+          title="Toggle webchat"
+        />
+        <Button
+          onPress={() => {
+            mergeConfig({ botName: Math.random() });
+          }}
+          title="changeConfig"
+        />
+        <Button
+          onPress={() => {
+            sendPayload({type:'text', text: Math.random() });
+          }}
+          title="send message"
+        />
+        
       </View>
       <View style={{ position: "absolute", top: 0, left: 0 }}>
         <WebView
