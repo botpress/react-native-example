@@ -47,7 +47,6 @@ const html = `<html>
 <meta name="viewport" content="width=device-width, initial-scale=1 viewport-fit=cover, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <style>
     body {
-      background-color: transparent;
       margin: 0 auto;
       display: -ms-flexbox;
       display: -webkit-flex;
@@ -56,7 +55,7 @@ const html = `<html>
       height: 100vh;
     }
     #bp-web-widget-container {
-      max-height: 90%;
+      height: 100%;
       width: 100%;
       margin: auto;
       flex-grow: 1;
