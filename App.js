@@ -1,20 +1,24 @@
 import { StatusBar } from "expo-status-bar";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { WebView } from "react-native-webview";
 
-// provider to recieve notifications (2)
-// a component to show the webview component (1) [Done]
-// hook for botpressWebChat that has these methods and can be used from anywhere within the provider. : (3)
-// init,
-// mergeConfig,
-// onEvent,
-// sendPayload,
-// sendEvent,
+// how to use (ideal) : 
+// import { BpIncommingMessagesListener, BpWidget } from "bp-devrel/bp-reactnative";
 
-/// context
-// globalWebview
-// webchatWebview // if this exists, ignore events from globalWebview
+// const App = () => {
+//   const useBpWidgetRef = useRef();
+//   bpWidgetRef.sendEvent();
+//   bpWidgetRef.sendPayload();
+//   bpWidgetRef.mergeConfig();
+
+//   return (
+//     <View>
+//       <BpIncommingMessagesListener botId={botId} onMessage={(message) => {console.log('message')}} />
+//       <BpWidget botConfig={botConfig} ref={useBpWidgetRef} />
+//     </View>
+//   );
+// };
 
 const testingConfig = {
   composerPlaceholder: "Chat with bot",
@@ -130,7 +134,7 @@ true; // note: this is required, or you'll sometimes get silent failures
 
   return (
     <View style={{ flex: 1, flexDirection: "column" }}>
-      <View style={{ flex: 1 ,}}>
+      <View style={{ flex: 1 }}>
         <WebView
           ref={(r) => (this.webref = r)}
           style={{ flex: 1 }}
